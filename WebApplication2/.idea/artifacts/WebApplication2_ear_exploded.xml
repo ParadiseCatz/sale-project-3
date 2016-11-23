@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="WebApplication2:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebApplication2_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="WebApplication2/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="web.war">
+        <element id="artifact" artifact-name="WebApplication2:war exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="json-simple-1.1.1" />
+      </element>
+    </root>
+  </artifact>
+</component>

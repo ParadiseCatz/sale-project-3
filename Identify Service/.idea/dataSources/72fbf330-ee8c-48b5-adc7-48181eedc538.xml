@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - iton_account@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="iton_account">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="iton"/>
+    <schema id="4" name="iton_marketplace"/>
+    <schema id="5" name="mbd_sandalphon"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="sys"/>
+    <table id="9" parent="1" name="data_pelanggan"/>
+    <table id="10" parent="1" name="login"/>
+    <table id="11" parent="1" name="session"/>
+    <column id="12" parent="9" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="13" parent="9" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="14" parent="9" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="15" parent="9" name="full_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="16" parent="9" name="full_address">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="17" parent="9" name="postal_code">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="phone_number">
+      <mandatory>1</mandatory>
+      <data-type>bigint(64)|0</data-type>
+    </column>
+    <column id="19" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <index id="20" parent="9" name="id">
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="21" parent="9" name="PRIMARY">
+      <columns>username
+email
+password
+id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="22" parent="10" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="23" parent="10" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="24" parent="10" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <index id="26" parent="10" name="id">
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="27" parent="10" name="PRIMARY">
+      <columns>email
+username
+password
+id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="28" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="token">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="expiry">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+  </database-model>
+</dataSource>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - iton_marketplace@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="iton_marketplace">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="iton"/>
+    <schema id="4" name="iton_account"/>
+    <schema id="5" name="mbd_sandalphon"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="sys"/>
+    <table id="9" parent="1" name="barang"/>
+    <table id="10" parent="1" name="transaction"/>
+    <table id="11" parent="1" name="user_liked"/>
+    <column id="12" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="13" parent="9" name="id_penjual">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="14" parent="9" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="15" parent="9" name="nama_barang">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="16" parent="9" name="harga">
+      <mandatory>1</mandatory>
+      <data-type>bigint(64)|0</data-type>
+    </column>
+    <column id="17" parent="9" name="deskripsi">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1000)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="nama_foto">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="19" parent="9" name="waktu_ditambahkan">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="20" parent="9" name="jumlah_like">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="21" parent="9" name="jumlah_dibeli">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <columns>id
+id_penjual</columns>
+      <primary>1</primary>
+    </key>
+    <column id="23" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="24" parent="10" name="id_pembeli">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="quantity">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="26" parent="10" name="cosignee">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="27" parent="10" name="full_address">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="28" parent="10" name="postal_code">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="29" parent="10" name="phone_number">
+      <mandatory>1</mandatory>
+      <data-type>bigint(64)|0</data-type>
+    </column>
+    <column id="30" parent="10" name="creditcard_number">
+      <mandatory>1</mandatory>
+      <data-type>bigint(32)|0</data-type>
+    </column>
+    <column id="31" parent="10" name="creeditcard_verification">
+      <mandatory>1</mandatory>
+      <data-type>int(4)|0</data-type>
+    </column>
+    <column id="32" parent="10" name="nama_barang">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="33" parent="10" name="harga_barang">
+      <mandatory>1</mandatory>
+      <data-type>bigint(64)|0</data-type>
+    </column>
+    <column id="34" parent="10" name="path_foto">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="35" parent="10" name="id_penjual">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="36" parent="10" name="waktu_transaksi">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="37" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="38" parent="11" name="id_user">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <column id="39" parent="11" name="id_barang">
+      <mandatory>1</mandatory>
+      <data-type>int(32)|0</data-type>
+    </column>
+    <key id="40" parent="11" name="PRIMARY">
+      <columns>id_user
+id_barang</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
