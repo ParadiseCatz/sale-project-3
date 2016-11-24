@@ -20,7 +20,7 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
 	res.header('Access-Control-Allow-Credentials', 'true');
     next();
-}
+};
 app.use(allowCrossDomain);
 
 // uncomment after placing your favicon in /public
@@ -51,6 +51,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+require('./mysql.js');
 
 var server = require('http').Server(app)
   , io = require('socket.io')(server);
@@ -82,7 +83,6 @@ function sendMessageToUser(deviceId, message) {
     }
     else {
       console.log('Done!');
-      console.log(response);
     }
   });
  }
