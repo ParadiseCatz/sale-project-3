@@ -1,8 +1,10 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '123456'
+    host     : 'localhost',
+    user     : 'root',
+    password : '123456',
+    database : 'iton_chat',
+    multipleStatements: true
 });
 
 connection.connect(function(err) {
@@ -13,3 +15,5 @@ connection.connect(function(err) {
 
   console.log('MySQL connected as id ' + connection.threadId);
 });
+
+module.exports = connection;

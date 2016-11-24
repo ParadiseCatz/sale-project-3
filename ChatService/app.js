@@ -51,58 +51,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-require('./mysql.js');
+var connection  = require('./mysql.js');
 
 var server = require('http').Server(app)
   , io = require('socket.io')(server);
+
+require('./messaging.js')(io, connection);
+
 module.exports = {app: app, server: server};
-
-var request = require('request');
-
-function sendMessageToUser(deviceId, message) {
-  request({
-    url: 'https://fcm.googleapis.com/fcm/send',
-    method: 'POST',
-    headers: {
-      'Content-Type' :' application/json',
-      'Authorization': 'key=AIzaSyCo8P-XQNdYTrpxf1Jhe1W3zQa2C0Ina1I'
-    },
-    body: JSON.stringify(
-      { "data": {
-        "message": message
-      },
-        "to" : deviceId
-      }
-    )
-  }, function(error, response, body) {
-    if (error) { 
-      console.error(error, response, body); 
-    }
-    else if (response.statusCode >= 400) { 
-      console.error('HTTP Error: '+response.statusCode+' - '+response.statusMessage+'\n'+body); 
-    }
-    else {
-      console.log('Done!');
-    }
-  });
- }
-
-io.on('connection', function (socket) {
-  console.log('client connected');
-  socket.emit('client_get', { data: 'world' });
-  socket.on('client_send', function (data) {
-  	socket.emit('client_get', { data: data.message });
-    console.log(data);
-  });
-  socket.on('token_send', function (data) {
-    console.log(data.token);
-    sendMessageToUser(
-	  data.token,
-	  { message: 'Hello puf'}
-	);
-  });
-
-  socket.on('disconnect', function() {
-  	console.log('client disconnected');
-  })
-});

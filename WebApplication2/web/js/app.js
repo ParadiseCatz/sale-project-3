@@ -9,13 +9,16 @@ var socket = io.connect('http://localhost:3000');
         $scope.sendMessage = function() {
             socket.emit('client_send', {
                 message: $scope.messageText,
-                token: Cookies.get('token')
+                token: Cookies.get('chat_token'),
+                recipientID: $scope.chatRecipientID,
+                senderID: Cookies.get('user_id')
             });
             $scope.messageText = "";
         };
 
         messaging.onMessage(function(payload) {
             console.log("Message received. ", payload);
+            $scope.chatboxDisable = false;
             $scope.messages.push(payload.data.message);
             $scope.$apply();
         });
@@ -24,6 +27,7 @@ var socket = io.connect('http://localhost:3000');
             console.log(user.id + " " + user.username + " ASD1qsdasdas");
             $scope.chatboxDisable = false;
             $scope.chatRecipientName = user.username;
+            $scope.chatRecipientID = user.id;
             $scope.$apply();
         });
     });
@@ -65,8 +69,10 @@ var socket = io.connect('http://localhost:3000');
         .then(function(currentToken) {
             if (currentToken) {
                 socket.emit('token_send', {
-                    token: currentToken
+                    token: currentToken,
+                    userID: Cookies.get('user_id')
                 });
+                Cookies.set('chat_token', currentToken);
                 // updateUIForPushEnabled(currentToken);
             } else {
                 // Show permission request.
