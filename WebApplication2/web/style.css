@@ -38,6 +38,7 @@
 .username{
 	text-align: left;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .divGambar > .GambarKatalog{
