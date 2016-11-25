@@ -93,6 +93,7 @@ module.exports = function (io, connection) {
                 if (allClients[i].socket == socket) {
                     token = allClients[i].token;
                     id = allClients[i].id;
+                    allClients.splice(i, 1);
                     break;
                 }
             }

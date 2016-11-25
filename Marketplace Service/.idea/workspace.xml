@@ -7,10 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69294050-5344-431d-9fd2-e925a483e9bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/web/WEB-INF/glassfish-web.xml" afterPath="$PROJECT_DIR$/../WebApplication2/web/WEB-INF/glassfish-web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/web/catalog.jsp" afterPath="$PROJECT_DIR$/../WebApplication2/web/catalog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/web/dashboard.jsp" afterPath="$PROJECT_DIR$/../WebApplication2/web/dashboard.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/web/style.css" afterPath="$PROJECT_DIR$/../WebApplication2/web/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ChatService/messaging.js" afterPath="$PROJECT_DIR$/../ChatService/messaging.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Identify Service/.idea/Identify Service.iml" afterPath="$PROJECT_DIR$/../Identify Service/.idea/Identify Service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Identify Service/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Identify Service/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../WebApplication2/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/out/artifacts/unnamed/js/app.js" afterPath="$PROJECT_DIR$/../WebApplication2/out/artifacts/unnamed/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WebApplication2/out/artifacts/unnamed/style.css" afterPath="$PROJECT_DIR$/../WebApplication2/out/artifacts/unnamed/style.css" />
     </list>
     <ignored path="Marketplace Service.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +52,7 @@
       <file leaf-file-name="Market.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/Market/Market.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3096">
+            <state relative-caret-position="802">
               <caret line="514" column="33" selection-start-line="514" selection-start-column="33" selection-end-line="514" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -512,7 +515,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../json-simple-1.1.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15722656" />
@@ -520,10 +523,10 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="FullScreen" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1107,6 +1110,7 @@
       <workItem from="1479014057572" duration="12393000" />
       <workItem from="1479377729165" duration="427000" />
       <workItem from="1479675757175" duration="1432000" />
+      <workItem from="1480015598956" duration="612000" />
     </task>
     <task id="LOCAL-00001" summary="Fix Edit product func">
       <created>1479029156418</created>
@@ -1119,10 +1123,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44831000" />
+    <option name="totallyTimeSpent" value="45443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1134,12 +1138,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31405783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31306082" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1182,6 +1186,81 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/java/Market/Market.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1479047340000" expanded="true" signature="3404:3476" ph="SELECT * FRO... barang" />
+            <marker date="1479047340000" expanded="true" signature="3582:3718" ph="SELECT * FRO... barang" />
+            <marker date="1479047340000" expanded="true" signature="3789:3926" ph="SELECT * FRO... barang" />
+            <marker date="1479047340000" expanded="true" signature="6380:6430" ph="INSERT INTO barang... " />
+            <marker date="1479047340000" expanded="true" signature="7855:7915" ph="SELECT * FRO... user_liked" />
+            <marker date="1479047340000" expanded="true" signature="8579:8663" ph="SELECT * FRO... barang" />
+            <marker date="1479047340000" expanded="true" signature="9979:10068" ph="SELECT * FRO... transaction" />
+            <marker date="1479047340000" expanded="true" signature="11601:11690" ph="SELECT * FRO... transaction" />
+            <marker date="1479047340000" expanded="true" signature="13274:13433" ph="DELETE FROM " />
+            <marker date="1479047340000" expanded="true" signature="15012:15075" ph="INSERT INTO transaction... " />
+            <marker date="1479047340000" expanded="true" signature="16000:16060" ph="UPDATE baran... " />
+            <marker date="1479047340000" expanded="true" signature="16981:17044" ph="INSERT INTO `user_liked`... " />
+            <marker date="1479047340000" expanded="true" signature="17324:17386" ph="UPDATE `bara... " />
+            <marker date="1479047340000" expanded="true" signature="18127:18187" ph="DELETE FROM " />
+            <marker date="1479047340000" expanded="true" signature="18467:18529" ph="UPDATE `bara... " />
+            <marker date="1479047340000" expanded="true" signature="19348:19422" ph="UPDATE `bara... " />
+            <marker date="1479047340000" expanded="true" signature="20042:20072" ph="SELECT * FRO... barang" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/Market/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#336#337#0" expanded="false" />
+            <element signature="e#400#401#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
+            <element signature="e#1256#1257#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/application.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/Marketplace Service.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/Market/Produk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#1932#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/Market/Market.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1546,7 +1625,7 @@
     <entry file="file://$PROJECT_DIR$/src/java/Market/AppConfig.java.default" />
     <entry file="file://$PROJECT_DIR$/src/java/Market/Market.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3096">
+        <state relative-caret-position="802">
           <caret line="514" column="33" selection-start-line="514" selection-start-column="33" selection-end-line="514" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
