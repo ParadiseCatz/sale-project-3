@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+  	"mysql" : "latest",
     "socket.io": "latest",
     "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.3",
