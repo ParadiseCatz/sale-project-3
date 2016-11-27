@@ -109,7 +109,7 @@
 
             for (market.Produk temp:result){
                 //Looping melakukan print catalog
-                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + temp.getUsername() + "</div>");
+                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + "<span id=\"bullet\">•  </span>" +temp.getUsername() + "</div>");
                 out.println("<div class=\"tanggal\"> added this on "+ temp.getWaktuDitambahkan() + "</div>");
                 out.println("<hr>");
                 out.println("<div class=\"container\">");
