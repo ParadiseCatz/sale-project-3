@@ -25,7 +25,7 @@ public class AppConfig {
                 entry("identity_service_url", "http://localhost:8081/Identity_Service"),
                 entry("web_application_url", "http://localhost:8080/Web_Application"),
                 entry("db_user", "root"),
-                entry("db_pass", "123456"),
+                entry("db_pass", ""),
                 entry("db_url", "jdbc:mysql://localhost:3306/iton_marketplace?zeroDateTimeBehavior=convertToNull")
                 ).
                 collect(entriesToMap()));

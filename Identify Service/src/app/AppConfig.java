@@ -26,7 +26,7 @@ public class AppConfig {
                 entry("web_application_url", "http://localhost:8080/Web_Application"),
                 entry("expired_time", String.valueOf(1000 * 60 * 60 * 2)),
                 entry("db_user", "root"),
-                entry("db_pass", "123456"),
+                entry("db_pass", ""),
                 entry("db_url", "jdbc:mysql://localhost:3306/iton_account?zeroDateTimeBehavior=convertToNull")
         ).
                 collect(entriesToMap()));
