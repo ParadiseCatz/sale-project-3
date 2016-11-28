@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2016 at 02:57 PM
+-- Generation Time: Nov 28, 2016 at 02:40 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -76,7 +76,7 @@ INSERT INTO `login` (`email`, `username`, `password`, `id`) VALUES
 
 CREATE TABLE `session` (
   `id` int(32) NOT NULL,
-  `token` varchar(50) NOT NULL,
+  `token` varchar(1024) NOT NULL,
   `expiry` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -155,7 +155,29 @@ INSERT INTO `session` (`id`, `token`, `expiry`) VALUES
 (1, 'kosfc9it1med4clvnht9i9qh5k', '2016-11-13 10:09:57'),
 (1, '8f0b00k4t442asvplb96rf9sai', '2016-11-13 10:28:49'),
 (1, 'ks4nm59j7be7o9p9a4remu7nrv', '2016-11-13 15:34:33'),
-(1, '4rpuj2f0bmrffcg0r2pb66sd5k', '2016-11-13 15:48:06');
+(1, '4rpuj2f0bmrffcg0r2pb66sd5k', '2016-11-13 15:48:06'),
+(1, '3ag5tim083pddp0ocl95dflohp', '2016-11-25 15:03:13'),
+(2, 'vo2r1a5hnpu2iu32d1nhibtmne', '2016-11-25 15:03:26'),
+(1, '5iceijchuog4uvr4ath0jlregk', '2016-11-28 14:03:55'),
+(1, 'oo8tran00mjas8qq2pfajs1tvi', '2016-11-28 14:53:47'),
+(1, 'ikvu75q2m9a3nfitd7f70dgc2n', '2016-11-28 14:54:42'),
+(1, 'erg338if6ej092f0154qtvcki', '2016-11-28 14:56:58'),
+(1, '5i8n63g9s283hkm4h9ahs3jc8i', '2016-11-28 14:57:49'),
+(1, 'jvv37nn48c4hihh4d642f74e13', '2016-11-28 14:58:21'),
+(1, 'rn5rfkqt5ejf1png82gaih14up', '2016-11-28 14:58:54'),
+(1, 'iq3li3o05tikv4okm7jc3php6p', '2016-11-28 15:00:38'),
+(1, 'qbe1it25n4mbav1bgvqnv77g9i', '2016-11-28 15:00:44'),
+(1, 'j2gphtvo5g4k2h94fi11fqaehh', '2016-11-28 15:00:46'),
+(1, 'pru30dbee4q0k9shsjh560mh9u', '2016-11-28 15:05:37'),
+(1, '62kegpt9fbilgr5af04219sbki', '2016-11-28 15:06:45'),
+(1, 'l53fmo7fdi6arfv77ot1nc9kga#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:33:33'),
+(1, 'h2bfamei2d5lkqosqqaios3foq#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:33:39'),
+(1, '9n701mpbbne64puusfji4fg8i3#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:34:06'),
+(1, '9n4ossh6htuuo7i187fn1o8alc#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:34:32'),
+(1, 'f0ri06li6i23qpaul9tlqkjk3u#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:36:14'),
+(1, '48u3o0o6hoesb9qm3sg1i45fnr#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:37:11'),
+(1, 'lr8il7slvphpk5v54ja6f2m3ed#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:37:16'),
+(1, 'rajgme7t2do306eer8s9b9m2tj#Mozilla/5.0 (Windows NT 10.0; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0#0:0:0:0:0:0:0:1', '2016-11-28 15:37:40');
 
 --
 -- Indexes for dumped tables
