@@ -36,6 +36,22 @@ function sendMessageToUser(deviceId, message) {
 module.exports = function (io, connection) {
     var allClients = [];
     io.on('connection', function (socket) {
+        socket.on('client_connect', function(data){
+            connection.query('SELECT DISTINCT id FROM `session`;',[],
+            function(error,results,fields){
+                if (error) {
+                        console.log('error list online: ' + error);
+                        return;
+                    }
+                var onlineList=results.slice();
+                //debug onlineList
+                console.log(onlineList);
+                socket.emit('list_online',{
+                    list:onlineList
+                });
+            })
+        });
+        
         socket.on('client_send', function (data) {
             connection.query(
                 'SELECT token FROM `session` WHERE id=?;' +

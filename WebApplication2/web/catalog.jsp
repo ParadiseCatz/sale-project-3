@@ -16,12 +16,15 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/angular.min.js"></script>
     <script>
+        
         var catalogApp = angular.module('catalogApp', []);
-
+        
         catalogApp.factory('$parentScope', function($window) {
             return $window.parent.angular.element($window.frameElement).scope();
         });
-
+        
+        catalogApp.controller();
+        
         catalogApp.controller('UserCtrl', function($scope, $parentScope) {
             $scope.userclick = function(userid, username) {
                 $parentScope.$emit('userClick', { id: userid, username:username} );
@@ -109,7 +112,7 @@
 
             for (market.Produk temp:result){
                 //Looping melakukan print catalog
-                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + temp.getUsername() + "</div>");
+                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + "<span id=\"bullet\">•  </span>" +temp.getUsername() + "</div>");
                 out.println("<div class=\"tanggal\"> added this on "+ temp.getWaktuDitambahkan() + "</div>");
                 out.println("<hr>");
                 out.println("<div class=\"container\">");
