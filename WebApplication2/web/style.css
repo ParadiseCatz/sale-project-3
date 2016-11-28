@@ -35,7 +35,7 @@
 	height: 6em;
 }
 
- #bullet{
+.bullet{
     font-weight: bold;
     font-size: 200%;
     color: green;
@@ -222,4 +222,32 @@ iframe {
 	z-index: 100;
 	background: #fff69a;
 	border: solid;
+        bottom: 0;
+        right: 0;
+}
+
+#topChat{
+    position:relative;
+}
+
+#bottomChat{
+    position:relative;
+}
+
+#xButton{
+    position:absolute;
+    right:10px;
+    top:5px;
+    background-color: red;
+    font-size: 150%;
+    color:white;
+}
+
+#kirimButton{
+    position:absolute;
+    right:10px;
+    top:5px;
+    background-color: skyblue;
+    color:white;
+    border:black;
 }
