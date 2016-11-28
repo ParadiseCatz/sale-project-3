@@ -35,7 +35,7 @@
 	height: 6em;
 }
 
- #bullet{
+.bullet{
     font-weight: bold;
     font-size: 200%;
     color: green;

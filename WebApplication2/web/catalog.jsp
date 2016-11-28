@@ -16,9 +16,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/angular.min.js"></script>
     <script>
-        
+        console.log(parent.userList);
         var catalogApp = angular.module('catalogApp', []);
-        
+        var iterate=0;
         catalogApp.factory('$parentScope', function($window) {
             return $window.parent.angular.element($window.frameElement).scope();
         });
@@ -112,7 +112,14 @@
 
             for (market.Produk temp:result){
                 //Looping melakukan print catalog
-                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + "<span id=\"bullet\">•  </span>" +temp.getUsername() + "</div>");
+                
+                out.println("<div class=\"username\" ng-click=userclick(" + temp.getIdPenjual() + ",\"" + temp.getUsername() + "\")>" + "<span class=\"bullet\">•  </span>" +temp.getUsername() + "</div>");
+                out.println("<script>"
+                        + "if (parent.userList.indexOf("+temp.getIdPenjual()+")==-1){"
+                        + "document.getElementsByClassName(\"bullet\")[iterate].style.color=\"red\";"
+                        + "}"
+                        + "iterate++"
+                        + "</script>");
                 out.println("<div class=\"tanggal\"> added this on "+ temp.getWaktuDitambahkan() + "</div>");
                 out.println("<hr>");
                 out.println("<div class=\"container\">");
