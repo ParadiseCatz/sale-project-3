@@ -90,6 +90,8 @@ public class Register extends HttpServlet {
         String FullAddress=request.getParameter("fulladdress");
         String PostalCode=request.getParameter("postalcode");
         String PhoneNumber=request.getParameter("phonenumber");
+        String browser = request.getParameter("browser");
+        String ipAddr = request.getParameter("ipAddr");
         String sql;
         boolean isExist = true;
         
@@ -141,7 +143,7 @@ public class Register extends HttpServlet {
                 Integer id = Auth.authenticate(UserName, Password);
                 if (id != null) {
                     JSONObject obj = new JSONObject();
-                    obj.put("token", Auth.addSession(id));
+                    obj.put("token", Auth.addSession(id, browser, ipAddr));
                     obj.put("session_age", AppConfig.get("expired_time"));
                     obj.put("status", "ok");
                     response.getWriter().write(obj.toString());
