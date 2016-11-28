@@ -67,24 +67,32 @@ public class Auth extends HttpServlet {
         }
     }
 
-    public static String addSession(Integer id) throws SQLException {
+    public static String addSession(Integer id, String browser, String ipAddr) throws SQLException {
         // Execute SQL query
         String token = buatToken();
+        String newtoken = appendToken(token, browser, ipAddr);
         Timestamp expiry = buatExpireTime();
 
         PreparedStatement pstmt = AppDatabase.getConnection().
                 prepareStatement("INSERT INTO `session` (`id`, `token`, `expiry`) VALUES (?, ? , ?)");
         pstmt.setInt(1, id);
-        pstmt.setString(2, token);
+        pstmt.setString(2, newtoken);
         pstmt.setTimestamp(3, expiry);
         pstmt.executeUpdate();
-        return token;
+        return newtoken;
     }
 
     //membuat token
     public static String buatToken() {
         SecureRandom random = new SecureRandom();
         return new BigInteger(130, random).toString(32);
+    }
+    
+        //membuat token
+    public static String appendToken(String t, String browser, String ipAddr) {
+        StringBuilder token = new StringBuilder (t);
+        token.append("#").append(browser).append("#").append(ipAddr);
+        return token.toString();
     }
 
     //membuat expire time dari sekarang

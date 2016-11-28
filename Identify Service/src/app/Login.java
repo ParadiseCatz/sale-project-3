@@ -33,35 +33,7 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.setContentType("application/json;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            //TODO Delete Debug
-//            //test token
-//            out.println(buatToken());
-//            Date expire = buatExpireTime();
-//            out.println(expire.toString());
-//            String sql2;
-//            String username = "root";
-//            String password = "root";
-//            sql2 = "SELECT id FROM `login` WHERE (username = \"" +username+ "\" " + "OR email= \"" + username + "\") " + "AND password = \"" +password +"\";" ;
-//            out.println(sql2);
-//            Statement stmt;
-//            try {
-//                stmt = AppDatabase.getConnection().createStatement();
-//                ResultSet rs = stmt.executeQuery(sql2);
-//                int jumlah = 0 ;
-//                // Extract data from result set
-//                while(rs.next()){
-//                    ++jumlah;
-//                }
-//                out.println(jumlah);
-//            } catch (SQLException ex) {
-//                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-//                ex.printStackTrace();
-//            }
-//
-//
-//        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -95,11 +67,13 @@ public class Login extends HttpServlet {
         PrintWriter out = response.getWriter();
         String email = request.getParameter("username");
         String pass = request.getParameter("password");
+        String browser = request.getParameter("browser");
+        String ipAddr = request.getParameter("ipAddr");
         try {
             Integer id = Auth.authenticate(email, pass);
             if (id != null) {
                 JSONObject obj = new JSONObject();
-                obj.put("token", Auth.addSession(id));
+                obj.put("token", Auth.addSession(id, browser, ipAddr));
                 obj.put("session_age", AppConfig.get("expired_time"));
                 obj.put("status", "ok");
                 response.getWriter().write(obj.toString());

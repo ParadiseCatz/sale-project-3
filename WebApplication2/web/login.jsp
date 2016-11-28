@@ -82,12 +82,17 @@
     String password = request.getParameter("password");
     if(username != null && password != null){
         String url = AppConfig.get("identity_service_url") + "/Login";
+        String browserType = request.getHeader("User-Agent");
+        String ipAddress = request.getRemoteAddr();
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         //add reuqest header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        String urlParameters = "username=" + username + "&password=" + password;
+        con.setRequestProperty("User-Agent", browserType);
+        String urlParameters = "username=" + username + "&password=" + password + "&browser=" + browserType + "&ipAddr=" + ipAddress;
+        //out.println("browser = " + browserType);
+        //out.println("ip addres = " +  ipAddress);
         // Send post request
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
