@@ -48,6 +48,9 @@ public class Market {
         //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+        //String browser = request.getParameter("browser");
+        //String ipAddr = request.getParameter("ipAddr");
+        //String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;
         String urlParameters = "token=" + token;
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());

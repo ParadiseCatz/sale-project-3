@@ -71,6 +71,7 @@ public class Login extends HttpServlet {
         String ipAddr = request.getParameter("ipAddr");
         try {
             Integer id = Auth.authenticate(email, pass);
+            System.err.println("id login java = " + id);
             if (id != null) {
                 JSONObject obj = new JSONObject();
                 obj.put("token", Auth.addSession(id, browser, ipAddr));

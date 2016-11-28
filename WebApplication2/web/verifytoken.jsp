@@ -144,8 +144,8 @@
         //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        String browser = request.getParameter("browser");
-        String ipAddr = request.getParameter("ipAddr");
+        String browser = request.getHeader("User-Agent");
+        String ipAddr = request.getRemoteAddr();
         String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());

@@ -49,7 +49,10 @@ public class Auth extends HttpServlet {
         StringBuilder t = new StringBuilder (token);
         t.append("#").append(browser).append("#").append(ipAddr);
         pstmt.setString(1, t.toString());
-        System.err.println(t.toString());
+        System.err.println("token = " + token);
+        System.err.println("browser = " + browser);
+        System.err.println("ipAddr = " + ipAddr);
+        System.err.println("t = " + t.toString());
         ResultSet rs = pstmt.executeQuery();
         int jumlah = 0;
         // Extract data from result set
@@ -151,6 +154,8 @@ public class Auth extends HttpServlet {
         String token = request.getParameter("token");
         String browser = request.getParameter("browser");
         String ipAddr = request.getParameter("ipAddr");
+        System.err.println("dopost auth java browser = " + browser);
+        System.err.println("dopost auth java ipaddr = " + ipAddr);
         try {
             Integer id = authenticate(token, browser, ipAddr);
             //System.err.println(id);
