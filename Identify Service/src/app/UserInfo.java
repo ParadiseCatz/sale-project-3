@@ -59,10 +59,12 @@ public class UserInfo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("application/json;charset=UTF-8");
         String token = request.getParameter("token");
+        String browser = request.getParameter("browser");
+        String ipAddr = request.getParameter("ipAddr");
         try {
             Integer id = null;
             if (token != null) {
-                id = Auth.authenticate(token);
+                id = Auth.authenticate(token, browser, ipAddr);
             }
             if (id == null) {
                 String userId = request.getParameter("user_id");

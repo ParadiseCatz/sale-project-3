@@ -112,7 +112,9 @@
                 Object obj2 = parser.parse(s);
                 JSONObject jsonObject = (JSONObject) obj2;
                 String token = jsonObject.get("token").toString();
-                Cookie cookietoken = new Cookie("token",token);
+                String pisah = "[#]";
+                String[] tokens = token.split(pisah);
+                Cookie cookietoken = new Cookie("token",tokens[0]);
 //                out.println("token = " + token);
                 Integer session_age = Integer.valueOf(jsonObject.get("session_age").toString());
                 cookietoken.setMaxAge(session_age / 1000);

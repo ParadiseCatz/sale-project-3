@@ -22,6 +22,7 @@ public class Auth extends HttpServlet {
     public static Integer authenticate(String username, String password) throws SQLException {
         // Execute SQL query
         Statement stmt = AppDatabase.getConnection().createStatement();
+        //System.err.println("sukses");
         String sql;
         sql = "SELECT id " +
                 "FROM `login` " +
@@ -40,12 +41,15 @@ public class Auth extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
-    public static Integer authenticate(String token) throws SQLException {
+    public static Integer authenticate(String token, String browser, String ipAddr) throws SQLException {
         // Execute SQL query
         PreparedStatement pstmt = AppDatabase.getConnection().prepareStatement("SELECT id " +
                 "FROM `session` " +
                 "WHERE token = ? AND expiry > NOW()");
-        pstmt.setString(1, token);
+        StringBuilder t = new StringBuilder (token);
+        t.append("#").append(browser).append("#").append(ipAddr);
+        pstmt.setString(1, t.toString());
+        System.err.println(t.toString());
         ResultSet rs = pstmt.executeQuery();
         int jumlah = 0;
         // Extract data from result set
@@ -59,7 +63,9 @@ public class Auth extends HttpServlet {
             PreparedStatement pstmt2 = AppDatabase.getConnection().
                     prepareStatement("UPDATE `session` SET expiry = ? WHERE token = ?");
             pstmt2.setTimestamp(1, expiry);
-            pstmt2.setString(2, token);
+            StringBuilder t2 = new StringBuilder (token);
+            t2.append("#").append(browser).append("#").append(ipAddr);
+            pstmt2.setString(2, t2.toString());
             pstmt2.executeUpdate();
             return id;
         } else {
@@ -77,6 +83,7 @@ public class Auth extends HttpServlet {
                 prepareStatement("INSERT INTO `session` (`id`, `token`, `expiry`) VALUES (?, ? , ?)");
         pstmt.setInt(1, id);
         pstmt.setString(2, newtoken);
+        //System.err.println("newtoken = " + newtoken);
         pstmt.setTimestamp(3, expiry);
         pstmt.executeUpdate();
         return newtoken;
@@ -142,8 +149,11 @@ public class Auth extends HttpServlet {
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String token = request.getParameter("token");
+        String browser = request.getParameter("browser");
+        String ipAddr = request.getParameter("ipAddr");
         try {
-            Integer id = authenticate(token);
+            Integer id = authenticate(token, browser, ipAddr);
+            //System.err.println(id);
             if (id != null) {
                 JSONObject obj = new JSONObject();
                 obj.put("user_id", id);

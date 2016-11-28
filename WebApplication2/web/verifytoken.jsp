@@ -75,14 +75,15 @@
 %>
 
 <%!
-    public void setUserInfo(HttpServletResponse response, String token) throws IOException {
+    public void setUserInfo(HttpServletResponse response, String token, String browser, String ipAddr) throws IOException {
         String url = AppConfig.get("identity_service_url") + "/UserInfo";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        String urlParameters = "token=" + token;
+
+        String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
         wr.writeBytes(urlParameters); wr.flush(); wr.close();
@@ -143,7 +144,9 @@
         //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        String urlParameters = "token=" + token;
+        String browser = request.getParameter("browser");
+        String ipAddr = request.getParameter("ipAddr");
+        String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
         wr.writeBytes(urlParameters);
@@ -162,7 +165,7 @@
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            setUserInfo(response, token);
+            setUserInfo(response, token, browser, ipAddr);
             setTokenOnSOAPHeader(token);
         } else {
             redirectToLogin(request, response);
