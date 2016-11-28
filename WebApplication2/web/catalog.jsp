@@ -16,12 +16,15 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="js/angular.min.js"></script>
     <script>
+        
         var catalogApp = angular.module('catalogApp', []);
-
+        
         catalogApp.factory('$parentScope', function($window) {
             return $window.parent.angular.element($window.frameElement).scope();
         });
-
+        
+        catalogApp.controller();
+        
         catalogApp.controller('UserCtrl', function($scope, $parentScope) {
             $scope.userclick = function(userid, username) {
                 $parentScope.$emit('userClick', { id: userid, username:username} );

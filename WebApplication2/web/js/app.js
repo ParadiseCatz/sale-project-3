@@ -1,11 +1,20 @@
 var socket = io.connect('http://localhost:3000');
-
+//userList = array yang berisi ID
+var userList=[];
+socket.emit('client_connect',{});
+socket.on('list_online',function(data){
+    for (i=0;i<data.list.length;i++){
+        userList[i]=data.list[i]["id"];
+    }
+    
+}); 
 (function() {
     chatapp = angular.module('myApp', []);
     chatapp.controller('ChatCtrl', function($scope) {
         $scope.messages = [];
         $scope.chatboxDisable = true;
         $scope.chatRecipientName = "";
+        console.log($scope.chatboxDisable);
         $scope.sendMessage = function() {
             socket.emit('client_send', {
                 message: $scope.messageText,
@@ -15,7 +24,7 @@ var socket = io.connect('http://localhost:3000');
             });
             $scope.messageText = "";
         };
-
+        
         messaging.onMessage(function(payload) {
             console.log("Message received. ", payload);
             $scope.chatboxDisable = false;
@@ -87,6 +96,7 @@ var socket = io.connect('http://localhost:3000');
             // showToken('Error retrieving Instance ID token. ', err);
             // setTokenSentToServer(false);
         });
+    
 }());
 
 
