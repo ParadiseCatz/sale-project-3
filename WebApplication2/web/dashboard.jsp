@@ -92,19 +92,24 @@
 
 <div ng-controller="UserChatBridge">
     <div class="chatbox" ng-controller="ChatCtrl" ng-hide="chatboxDisable">
-        <button ng-click="chatboxDisable = true">x</button>
-        <div>
-            {{chatRecipientName}}
+        
+        <div id="topChat">
+            <span class="bullet">•  </span>{{chatRecipientName}}
+            <button ng-click="chatboxDisable = true" id="xButton">x</button>
         </div>
+        <hr>
         <div>
             <ul>
                 <li ng-repeat="message in messages track by $index">{{message}}</li>
             </ul>
-
-            <form ng-submit="sendMessage()">
-                <input type="text" ng-model="messageText" placeholder="Type your message here" />
-                <input type="submit" value="Send" />
-            </form>
+            <hr>
+            <div id="bottomChat">
+                <form ng-submit="sendMessage()">
+                    <input type="text" ng-model="messageText" placeholder="Type your message here" />
+                    <input type="submit" value="Kirim" id="kirimButton" />
+                </form>
+            </div>
+            
         </div>
     </div>
 

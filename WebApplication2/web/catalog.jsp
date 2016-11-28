@@ -26,9 +26,12 @@
         catalogApp.controller();
         
         catalogApp.controller('UserCtrl', function($scope, $parentScope) {
-            $scope.userclick = function(userid, username) {
-                $parentScope.$emit('userClick', { id: userid, username:username} );
-            };
+            if (parent.userList.indexOf($scope.chatRecipientID)>-1){
+                $scope.userclick = function(userid, username) {
+                    $parentScope.$emit('userClick', { id: userid, username:username} );
+                };
+            }
+            
         });
         window.onload = function() {
             var likeButtons = document.querySelectorAll(".like, .liked");
