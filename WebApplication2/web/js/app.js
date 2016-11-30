@@ -33,6 +33,9 @@ socket.on('list_online',function(data){
             if (data.fromRecipient==true){
                 $scope.chatRecipientName = data.senderUsername;
                 kelas="recipient";
+                if (data.senderID != $scope.chatRecipientID) {
+                    $scope.messages = [];
+                }
                 $scope.chatRecipientID = data.senderID;
             }
             else
@@ -52,6 +55,9 @@ socket.on('list_online',function(data){
             console.log(user.id + " " + user.username + " ASD1qsdasdas");
             $scope.chatboxDisable = false;
             $scope.chatRecipientName = user.username;
+            if (user.id != $scope.chatRecipientID) {
+                $scope.messages = [];
+            }
             $scope.chatRecipientID = user.id;
             $scope.$apply();
         });

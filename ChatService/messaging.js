@@ -91,10 +91,6 @@ module.exports = function (io, connection) {
         socket.on('token_send', function (data) {
             console.log("userid = " + data.userID + " connected");
             allClients.push({socket:socket, token:data.token, id:data.userID});
-            sendMessageToUser(
-                data.token,
-                { message: 'Hello puf'}
-            );
             connection.query(
                 'INSERT INTO `session` (`id`, `token`) VALUES (?, ?)',
                 [data.userID, data.token],
