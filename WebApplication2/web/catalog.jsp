@@ -26,11 +26,12 @@
         catalogApp.controller();
         
         catalogApp.controller('UserCtrl', function($scope, $parentScope) {
-            if (parent.userList.indexOf($scope.chatRecipientID)>-1){
-                $scope.userclick = function(userid, username) {
-                    $parentScope.$emit('userClick', { id: userid, username:username} );
-                };
-            }
+
+            $scope.userclick = function (userid, username) {
+                if (parent.userList.indexOf(userid) > -1) {
+                    $parentScope.$emit('userClick', {id: userid, username: username});
+                }
+            };
             
         });
         window.onload = function() {
