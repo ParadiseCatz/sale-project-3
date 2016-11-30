@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #cancel{
 	box-sizing: border-box;
 	margin-top:1.2em;
@@ -215,13 +216,14 @@ iframe {
 
 .chatbox {
 	position: fixed;
+        border-radius: 10px 10px 0px 0px;
 	float: right;
 	margin-top: 400px;
 	width: 400px;
 	height: 400px;
 	z-index: 100;
-	background: #fff69a;
-	border: solid;
+	background: #00ffcc;
+	border: double #0000cc  ;
         bottom: 0;
         right: 0;
 }
@@ -236,11 +238,12 @@ iframe {
 
 #xButton{
     position:absolute;
-    right:10px;
+    right:12px;
     top:5px;
     background-color: red;
-    font-size: 150%;
+    font-size: 120%;
     color:white;
+    border-radius: 15px;
 }
 
 #kirimButton{
@@ -250,6 +253,7 @@ iframe {
     background-color: skyblue;
     color:white;
     border:black;
+    border-radius: 10px;
 }
 
 .sender{
