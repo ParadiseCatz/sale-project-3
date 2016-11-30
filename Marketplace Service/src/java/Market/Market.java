@@ -41,17 +41,19 @@ public class Market {
         //get detail from request headers
         Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
         List tokenList = (List) http_headers.get("token");
+        List browserList = (List) http_headers.get("browser");
+        List ipAddrList = (List) http_headers.get("ipAddr");
+
         String token = tokenList.get(0).toString();
+        String browser = browserList.get(0).toString();
+        String ipAddr = ipAddrList.get(0).toString();
         String url = AppConfig.get("identity_service_url") + "/Auth";
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         //add request header
         con.setRequestMethod("POST");
         con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
-        //String browser = request.getParameter("browser");
-        //String ipAddr = request.getParameter("ipAddr");
-        //String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;
-        String urlParameters = "token=" + token;
+        String urlParameters = "token=" + token + "&browser=" + browser + "&ipAddr=" + ipAddr;;
         con.setDoOutput(true);
         DataOutputStream wr = new DataOutputStream(con.getOutputStream());
         wr.writeBytes(urlParameters);

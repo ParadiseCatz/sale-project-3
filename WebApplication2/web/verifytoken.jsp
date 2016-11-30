@@ -23,11 +23,13 @@
 %>
 
 <%!
-    public void setTokenOnSOAPHeader(String token) {
+    public void setTokenOnSOAPHeader(String token, String browser, String ipAddr) {
         Map<String, Object> req_ctx = ((BindingProvider)port).getRequestContext();
 
         Map<String, List<String>> headers = new HashMap<>();
         headers.put("token", Collections.singletonList(token));
+        headers.put("browser", Collections.singletonList(browser));
+        headers.put("ipAddr", Collections.singletonList(ipAddr));
         req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
     }
 %>
@@ -166,7 +168,7 @@
                 e.printStackTrace();
             }
             setUserInfo(response, token, browser, ipAddr);
-            setTokenOnSOAPHeader(token);
+            setTokenOnSOAPHeader(token, browser, ipAddr);
         } else {
             redirectToLogin(request, response);
         }
