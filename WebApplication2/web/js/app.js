@@ -7,6 +7,7 @@ socket.on('list_online',function(data){
         userList[i]=data.list[i]["id"];
     }
     
+    document.getElementById('frame').contentWindow.location.reload(true);
 }); 
 (function() {
     chatapp = angular.module('myApp', []);

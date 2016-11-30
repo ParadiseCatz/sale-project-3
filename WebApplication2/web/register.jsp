@@ -68,10 +68,13 @@
             //add reuqest header
             con.setRequestMethod("POST");
             con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+            String browserType = request.getHeader("User-Agent");
+            String ipAddress = request.getRemoteAddr();
             String urlParameters = "fullname=" + FullName + "&username=" + UserName
                     + "&email=" + Email + "&password=" + Password
                     + "&confirmpassword=" + ConfirmPassword + "&fulladdress=" + FullAddress
-                    + "&postalcode=" + PostalCode + "&phonenumber=" + PhoneNumber;
+                    + "&postalcode=" + PostalCode + "&phonenumber=" + PhoneNumber
+                    + "&browser=" +browserType + "&ipAddr="+ipAddress;
             // Send post request
             con.setDoOutput(true);
             DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -91,8 +94,12 @@
                     Object obj2 = parser.parse(s);
                     JSONObject jsonObject = (JSONObject) obj2;
                     String token = jsonObject.get("token").toString();
-                    Cookie cookietoken = new Cookie("token",token);
+                    String pisah = "[#]";
+                    String[] tokens = token.split(pisah);
+                    Cookie cookietoken = new Cookie("token",tokens[0]);
+                    
                     out.println("token = " + token);
+                    System.err.println(token+" INI TOKEN");
                     Integer session_age = Integer.valueOf(jsonObject.get("session_age").toString());
                     cookietoken.setMaxAge(session_age / 1000);
                     response.addCookie(cookietoken);
