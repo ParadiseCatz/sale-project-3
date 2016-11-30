@@ -20,15 +20,31 @@ socket.on('list_online',function(data){
                 message: $scope.messageText,
                 token: Cookies.get('chat_token'),
                 recipientID: $scope.chatRecipientID,
-                senderID: Cookies.get('user_id')
+                senderID: Cookies.get('user_id'),
+                senderUsername: Cookies.get('username')
             });
             $scope.messageText = "";
         };
         
         messaging.onMessage(function(payload) {
             console.log("Message received. ", payload);
+            var data = jQuery.parseJSON( payload.data.message);
+            var kelas;
+            if (data.fromRecipient==true){
+                $scope.chatRecipientName = data.senderUsername;
+                kelas="recipient";
+                $scope.chatRecipientID = data.senderID;
+            }
+            else
+            {
+                kelas="sender";
+            }
+            
             $scope.chatboxDisable = false;
-            $scope.messages.push(payload.data.message);
+            $scope.messages.push({
+                content: data.message,
+                class: kelas
+            });
             $scope.$apply();
         });
 

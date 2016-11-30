@@ -80,6 +80,8 @@ module.exports = function (io, connection) {
                         recipientToken,
                         {
                             message: data.message,
+                            senderID: data.senderID,
+                            senderUsername: data.senderUsername,
                             fromRecipient: true
                         }
                     );

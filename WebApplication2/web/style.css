@@ -251,3 +251,51 @@ iframe {
     color:white;
     border:black;
 }
+
+.sender{
+    float:left;
+    background-color: graytext;
+}
+
+.recipient{
+    float:right;
+    background-color: skyblue;
+}
+
+.bubble-dialog {
+    white-space: pre-line;
+    line-height:0;
+    height: 280px;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+}
+
+.bubble-left,
+.bubble-right {
+    line-height: 100%;
+    display: block;
+    position: relative;
+    padding: .25em .5em;
+    border: black solid 0px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    margin-bottom: 2em;
+    clear: both;
+    max-width:50%;
+}
+p{
+    margin-bottom: 0;
+}
+
+.bubble-left {
+    float: left;
+    margin-right:10%;
+    background: lightgrey;
+}
+.bubble-right {
+    float:right;
+    margin-left:10%;
+    background: dodgerblue;
+    color: white;
+}

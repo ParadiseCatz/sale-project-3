@@ -99,9 +99,10 @@
         </div>
         <hr>
         <div>
-            <ul>
-                <li ng-repeat="message in messages track by $index">{{message}}</li>
-            </ul>
+            <div class="bubble-dialog">
+                <div ng-repeat="message in messages track by $index" ng-class="{'bubble-left' : message.class == 'recipient', 'bubble-right' : message.class == 'sender'}">{{message.content}}</div>
+
+            </div>
             <hr>
             <div id="bottomChat">
                 <form ng-submit="sendMessage()">
